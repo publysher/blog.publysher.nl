@@ -1,8 +1,7 @@
 ---
+layout: post
 title: "Separating the Master from the Minion"
-series: "Infra as a Repo"
-date: "2013-08-11"
-description: "How I provisioned a multi-VM infrastructure on Digital Ocean using Salt Stack and a master/minion setup"
+category: "Infra as a Repo"
 ---
 
 Life can be good. After [my previous success in provisioning a master/minion set-up][my-master], the next logical step was
@@ -23,7 +22,9 @@ A second VM
 
 [Vagrant][] is built to provision multiple VMs from the same file, so I started by using that feature:
 
-    ...
+{% highlight ruby %}
+
+    # ...
     # SALT is the salt master
     config.vm.define :salt do |node|
         set_network(node, '10.1.14.50', %w(salt.intranet salt))
@@ -33,6 +34,8 @@ A second VM
     config.vm.define :nginx01 do |node|
         set_network(node, '10.1.14.100', %w(nginx01.intranet nginx01))
     end
+{% endhighlight %}
+
 
 The `set_network` function is an expanded version of the `set_host_aliases` function from the [previous post][my-master].
 And that's it -- running `vagrant up` will now spin up two virtual machines on my local computer, each with their own
@@ -44,6 +47,8 @@ Provisioning the master
 
 The Salt machine is meant to be provisioned as a salt master. I already knew how to do that, so this was easily
 implemented:
+
+{% highlight ruby %}
 
     # SALT is the salt master
     config.vm.define :salt do |node|
@@ -72,6 +77,7 @@ implemented:
         # And explicitly call the highstate on this one
         node.vm.provision :shell, :inline => 'sleep 60; salt-call state.highstate'
     end
+{% endhighlight %}
 
 If this looks vaguely familiar, you've obviously read my [previous post][my-master]. If not, go ahead and read it.
 The only difference is the addition of a new public/private key-pair for this machine.
@@ -79,9 +85,12 @@ The only difference is the addition of a new public/private key-pair for this ma
 This resulted in my master VM being provisioned as a Salt master and Nginx server. Wait. Nginx server? The `top.sls`
 file needed a little tweaking as well.
 
+{% highlight yaml %}
+
     base:
         'nginx01.intranet':
             - nginx
+{% endhighlight %}
 
 Now my VM was provisioned as desired.
 
@@ -90,6 +99,8 @@ Provisioning the minion
 ------------------------
 
 I told you it was easy:
+
+{% highlight ruby %}
 
     # NGINX01 is a web server
     config.vm.define :nginx01 do |node|
@@ -103,6 +114,7 @@ I told you it was easy:
             salt.minion_pub = 'build/keys/nginx01.intranet.pub'
         end
     end
+{% endhighlight %}
 
 And that's it. Calling `vagrant up` now spins up two VMs: one salt master and one minion that runs as an Nginx server.
 

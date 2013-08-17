@@ -1,8 +1,7 @@
 ---
+layout: post
 title: "Adding a Salt master"
-series: "Infra as a Repo"
-date: "2013-08-09"
-description: "How I provisioned a single Nginx server on Digital Ocean using Salt Stack and a master/minion setup"
+category: "Infra as a Repo"
 ---
 
 After I [managed to provision an Nginx server][previous post] using a masterless Salt setup, I felt it was time to
@@ -68,6 +67,8 @@ HEAD where preseeding is done incorrectly. There is a [pull request] for that, b
 So, save yourself a lot of hairpulling, fork the plugin, apply the pull request, and install the plugin from source.
 After this, we're getting close...
 
+{% highlight ruby %}
+
     config.vm.provision :salt do |salt|
         salt.bootstrap_script = 'lib/salt-bootstrap/bootstrap-salt.sh'
 
@@ -90,7 +91,7 @@ After this, we're getting close...
         node.vm.network :private_network, ip: '10.1.14.100'
         node.vm.synced_folder 'salt/roots/', '/srv/'
     end
-
+{% endhighlight %}
 
 Where is my master?
 -------------------
@@ -103,6 +104,8 @@ This cute plugin updates the `/etc/hosts`-file on the guests and supports host a
 ensuring that all hosts are known to each other before the Salt provisioning starts. And it can also update the
 `/etc/hosts`-file on the host machine, which is a nice feature to have.
 
+{% highlight ruby %}
+
     config.hostmanager.enabled = false             # use explicit provisioning
     config.hostmanager.ignore_private_ip = false   # use my :private_network IP
 
@@ -113,7 +116,7 @@ ensuring that all hosts are known to each other before the Salt provisioning sta
         ...
         node.hostmanager.aliases = %w(salt salt.intranet)   # my aliases
     end
-
+{% endhighlight %}
 
 Not so fast...
 --------------
@@ -124,6 +127,8 @@ highstate.
 
 I tried all kinds of config tweaking to fix this, but in the end I gave up. I wanted to see some results.
 
+{% highlight ruby %}
+
     config.vm.provision :salt do |salt|
         ...
         salt.run_highstate = false
@@ -133,6 +138,7 @@ I tried all kinds of config tweaking to fix this, but in the end I gave up. I wa
         ...
         node.vm.provision :shell, :inline => 'sleep 60; salt-call state.highstate'
     end
+{% endhighlight %}
 
 Did you notice the subtle `sleep 60` call? This [scientifically determined][trial-error] delay ensures that the
 salt minion is up, running and connected when we finally do what we've always wanted to do: running the highstate.
@@ -151,7 +157,10 @@ It's fun to have a virtul infrastructure on your own computer, but my original g
 
 Remember this line?
 
+{% highlight ruby %}
+
     config.hostmanager.ignore_private_ip = false    # use my :private_network IP
+{% endhighlight %}
 
 This line is necessary when working with the virtualbox provider, to ensure that the host files are seed with private
 network IPs
@@ -160,10 +169,13 @@ search for the `salt` host on `10.1.14.100`. Which is [not going to work][Privat
 
 In theory, this can be overridden by using Vagrant's provider override functionality:
 
+{% highlight ruby %}
+
     config.vm.provider :digital_ocean do |provider, override|
         ...
         override.hostmanager.ignore_private_ip = true
     end
+{% endhighlight %}
 
 But due to Vagrant's arcane configuration inheritance settings, this nullifies my `node.hostmanager.aliases`
 settings.
@@ -174,6 +186,8 @@ But that does not exist. [And it is not going to exist either.][current-provider
 As it turns out, the recommended approach is to define your own functions. The `Vagrantfile` is just a piece of
 Ruby code, so as long as you can program Ruby, you can do everything you want. It's just that I was never interested
 in learning Ruby...
+
+{% highlight ruby %}
 
     def set_host_aliases(node, aliases)
         node.hostmanager.aliases = aliases
@@ -192,6 +206,7 @@ in learning Ruby...
             set_host_aliases(node, %w(salt salt.intranet))
         end
     end
+{% endhighlight %}
 
 If anyone has a better solution, please let me know! But despite my misgivings about this hack, [it works].
 

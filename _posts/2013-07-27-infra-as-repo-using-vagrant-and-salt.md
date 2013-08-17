@@ -1,7 +1,7 @@
 ---
+layout: post
 title: "Using Vagrant and Salt Stack to deploy Nginx on DigitalOcean"
-series: "Infra as a Repo"
-pubdate: "2013-07-27"
+category: "Infra as a Repo"
 ---
 
 I believe that managing your infrastructure can and should be fun. Recently I have been toying around with
@@ -22,6 +22,8 @@ I began by using [Vagrant](http://vagrantup.com), an exciting tool that abstract
 configuration file. Using a VirtualBox image I created earlier using [Veewee](https://github.com/jedi4ever/veewee), 
 the following Vagrantfile allowed me to spin up and destroy a local Debian Wheezy VM.
 
+{% highlight ruby %}
+
     Vagrant.configure("2") do |config|
     
       # Default configuration for Virtualbox
@@ -32,6 +34,7 @@ the following Vagrantfile allowed me to spin up and destroy a local Debian Wheez
       config.vm.define :nginx01
     
     end
+{% endhighlight %}
 
 Just by having this simple file, I can now manage a VM with the commands `vagrant up`, 
 `vagrant ssh` and `vagrant destroy`.
@@ -49,6 +52,8 @@ with Salt Stack.
 
 Anyway, the following lines in my Vagrantfile were enough to enable Salt Stack:
 
+{% highlight ruby %}
+
     # Mount salt roots, so we can do masterless setup
     config.vm.synced_folder 'salt/roots/', '/srv/'
 
@@ -65,6 +70,7 @@ Anyway, the following lines in my Vagrantfile were enough to enable Salt Stack:
         salt.run_highstate = true
         salt.verbose = true
     end
+{% endhighlight %}
 
 This, and some Salt files of course. They can be found in my
 [Github repo](https://github.com/publysher/infra-example-nginx/tree/v1.0) under `salt/roots`. In this case,
@@ -96,8 +102,9 @@ don't like sharing this information on Github.
 Luckily, Vagrant has [a complete settings-merging process](http://docs.vagrantup.com/v2/vagrantfile/index.html) in
 place, which meant I could simply create the following `~/.vagrant.d/Vagrantfile`:
 
-    Vagrant.configure("2") do |config|
+{% highlight ruby %}
 
+    Vagrant.configure("2") do |config|
         config.vm.provider :digital_ocean do |provider, override|
             override.ssh.private_key_path = '~/.ssh/id_dsa'
             override.vm.box_url = 'https://github.com/smdahlen/vagrant-digitalocean/raw/master/box/digital_ocean.box'
@@ -105,13 +112,15 @@ place, which meant I could simply create the following `~/.vagrant.d/Vagrantfile
             provider.client_id = 'MY-SECRET-ID'
             provider.api_key = 'MY-SUPER-SECRET-API-KEY'
         end
-
     end
+{% endhighlight %}
 
 Note the `override.vm.box_url` setting – my beautiful preinstalled Wheezy VM is useless on Digital Ocean, so I just use
 their dummy box. Always.
 
 Having set up my private information, I just needed to add the following lines to my main Vagrantfile:
+
+{% highlight ruby %}
 
     # VM-specific digital ocean config
     config.vm.provider :digital_ocean do |provider|
@@ -119,6 +128,7 @@ Having set up my private information, I just needed to add the following lines t
         provider.region = 'New York 1'
         provider.size = '512MB'
     end
+{% endhighlight %}
 
 Deploying the image
 -------------------

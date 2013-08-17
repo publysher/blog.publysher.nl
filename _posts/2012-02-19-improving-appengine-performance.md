@@ -1,9 +1,6 @@
 ---
+layout: post
 title: "Improving AppEngine performance: from JPA to Objectify"
-series: "AppEngine"
-pubdate: "2012-02-19"
-description: "How I improved the performance of my Java application on AppEngine by migrating from JPA to Objectify"
-slug: "improving-appengine-performance-jpa-objectify"
 ---
 
 This weekend, I have migrated my [Google AppEngine][] application [Zoo Wizard][] from JPA to [Objectify][].
@@ -75,6 +72,8 @@ Deploying my application to GAE showed a different story. The application refuse
 
 As it turns out, JPA maps `@Embedded` fields differently from Objectify. Have a look at this JPA example:
 
+{% highlight java %}
+
     @Entity class Zoo {
       @Embedded Address address;
     }
@@ -82,9 +81,12 @@ As it turns out, JPA maps `@Embedded` fields differently from Objectify. Have a 
     @Embeddable class Address {
       @Basic String city;
     }
+{% endhighlight %}
 
 In this example, JPA by default stores the "city" field in a column called "city". Now have a look at this
 Objectify example:
+
+{% highlight java %}
 
     @Entity class Zoo {
       @Embedded Address address;
@@ -93,9 +95,12 @@ Objectify example:
     class Address {
       String city;
     }
+{% endhighlight %}
 
 Objectify stores the `city` field as `address.city`. Quite a difference. As it turns out, qualifying `@Embedded`
 names cannot by turned off using Objectify's schema migration tools. So, I ended up with the following workaround:
+
+{% highlight java %}
 
     @Entity class Zoo {
       @Embedded Address address;
@@ -111,6 +116,7 @@ names cannot by turned off using Objectify's schema migration tools. So, I ended
     class Address {
       String city;
     }
+{% endhighlight %}
 
 The `@PostLoad` method ensured that entities previously stored using JPA were still loaded correctly using Objectify.
 Given the fact that ZooWizard still contains a small number of entities, I did not mind too much, but for large
@@ -126,11 +132,11 @@ The last step was to remove everything I no longer needed:
 
 - Objectify does not need the DataNucleus enhancement, improving my build speed;
 - Many Spring/JPA libraries could be removed from my build. Some examples:
-    - org.springframework:spring-orm:jar
-    - org.springframework:spring-jdbc:jar
-    - com.google.appengine.orm:datanucleus-appengine:jar
-    - javax.jdo:jdo-api:jar
-    - javax.transaction:jta:jar
+    - `org.springframework:spring-orm:jar`
+    - `org.springframework:spring-jdbc:jar`
+    - `com.google.appengine.orm:datanucleus-appengine:jar`
+    - `javax.jdo:jdo-api:jar`
+    - `javax.transaction:jta:jar`
 
 Being Happy
 -----------

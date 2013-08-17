@@ -1,9 +1,55 @@
 ---
 layout: default
 ---
-<h2>{{ page.title }}</h2>
-<p class="meta">{{ page.date | date_to_string }}</p>
+<article class="blog single" itemscope itemtype="http://schema.org/BlogPosting">
 
-<div class="post">
-{{ content }}
-</div>
+    <header>
+        <h1 itemprop="name">{{ page.title }}</h1>
+        <p itemprop="about" class="series">{{ page.category }}</p>
+        <time itemprop="datePublished" pubdate datetime="{{ page.date }}">{{ page.date | date_to_string }}</time>
+        <a itemprop="url" rel="bookmark" href="{{ page.url }}/">permalink</a>
+    </header>
+
+    <div class="content" itemscope="articleBody">
+        {{ content }}
+    </div>
+
+    <aside>
+
+        {% if page.category %}
+        <section class="series">
+            <h2>{{ page.category }}</h2>
+
+            <ol>
+                {% for post in site.posts reversed %}
+                    {% assign match = false %}
+                    {% for category in post.categories %}
+                        {% if page.categories contains category %}
+                            {% assign match = true %}
+                        {% endif %}
+                    {% endfor %}
+                    {% if match %}
+                        <li{% if post.url == page.url %} class="active"{% endif %}><a href="{{ post.url }}">{{ post.title }}</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ol>
+        </section>
+        {% endif %}
+    </aside>
+
+    <footer>
+        <ul class="timeline-nav">
+            {% if page.previous.url %}
+            <li class="older">
+                <a rel="prev" href="{{ page.previous.url }}">Previous post</a>
+            </li>
+            {% endif %}
+            {% if page.next.url %}
+            <li class="newer">
+                <a rel="next" href="{{ page.next.url }}">Next post</a>
+            </li>
+            {% endif %}
+        </ul>
+    </footer>
+</article>
+

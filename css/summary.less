@@ -1,0 +1,44 @@
+@import-once "bootstrap/less/type";
+
+article.blog.summary {
+
+  position: relative;
+  header {
+
+    // use the permalink to make the entire block clickable
+    a[rel=bookmark] {
+      position: absolute;
+      top: 0;
+      left: -1em;
+      width: 110%;
+      height: 110%;
+
+      text-indent: -100em;
+
+      margin: -1em;
+    }
+
+    time,
+    .series {
+      display: none;
+    }
+  }
+
+  h1 {
+    margin-top: 0;
+  }
+
+  footer {
+    ul {
+      .list-unstyled();
+    }
+
+    a[rel=bookmark] {
+      &:after {
+        content: '...';
+      }
+    }
+  }
+
+}
+

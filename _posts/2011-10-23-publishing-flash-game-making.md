@@ -1,9 +1,7 @@
 ---
+layout: post
 title: "Publishing a Flash Game: Making Preparations"
-series: "Game Development"
-pubdate: "2011-10-23"
-description: "Some initial research into monetizing flash games"
-slug: "publishing-flash-game-making"
+category: "Game Development"
 ---
 
 Making games is fun. But so is making money. My first game, Droppy Goes Home, is nearly finished, and it's time to
@@ -12,29 +10,29 @@ prepare the next steps: publishing the game and becoming annoyingly rich in the 
 I've never published a game before, but in the end, business is always the same. In order to make money, every business
 has to do two important things:
 
-1. Marketing --- if people don't know your product, you will never make any money.
-2. Monetization --- no one gives you money for the fun of it; there needs to be plan.
+1. Marketing – if people don't know your product, you will never make any money.
+2. Monetization – no one gives you money for the fun of it; there needs to be plan.
 
 So let's apply this to the Flash game business!
 
 Research
---------
+––--
 
 Inventing the wheel might be exciting, but I prefer to use available knowledge. An hour of Googling resulted in the
 following noteworthy articles.
 
-- [Marketing Flash Games: The Other Half of the Battle][] --- a concise overview of the marketing options available to
+- [Marketing Flash Games: The Other Half of the Battle][] – a concise overview of the marketing options available to
   Flash games; the associated case study makes it very interesting.
-- [Ten Ways to Monetize Your Flash Game][] --- the most complete overview I could find of all the monetization methods
+- [Ten Ways to Monetize Your Flash Game][] – the most complete overview I could find of all the monetization methods
   for online Flash games.
-- [In Depth: Behind Flash Game Steambirds' Revenue Deals][] --- an interesting case study to guide my plans.
-- [Experiment: monetizing a Flash game][] --- another case study to guide my plans; unfortunately, this experiment is
+- [In Depth: Behind Flash Game Steambirds' Revenue Deals][] – an interesting case study to guide my plans.
+- [Experiment: monetizing a Flash game][] – another case study to guide my plans; unfortunately, this experiment is
   from October 2007, so it's not exactly up-to-date.
 
 Regarding Droppy Goes Home, all these articles are pointing in the same direction: Game portals and Sponsorship.
 
 Game Portals
-------------
+––––
 
 [Game portals] are sites dedicated to Flash Games. They have a huge audience, and combined with "Editor's Picks"
 and "Top Games" lists they can provide enormous amounts of players; this basically shifts your marketing effort from
@@ -43,7 +41,7 @@ advertising to making a very good game.
 The Mochi Flash Resource Center contains a list of [100+ Flash Game portals].
 
 Sponsorship
------------
+–––--
 
 > "A [sponsorship][] can be any sort of licensing deal in which a Flash game developer is paid money to leverage the game
 > for the benefit of the sponsor. The sponsor may be a game publisher with a portal website, or a distributor of Flash
@@ -52,7 +50,7 @@ Sponsorship
 Most research points to  [FlashGameLicense] as the best place to find a sponsor.
 
 Other methods
--------------
+––––-
 
 The research above points to other methods as well, but they seem unsuitable for Droppy Goes Home.
 In-game advertising does not seem to be a goldmine, especially compared to game portals like
@@ -62,7 +60,7 @@ Other options like micro-transactions (where players pay for additional content 
 changes to the current version of the game. But who knows, one of the sequels might actually use such a method.
 
 Conclusion
-----------
+–––-
 
 Doing the research has been very interesting, and has given me a clear path to follow for Droppy Goes Home.
 

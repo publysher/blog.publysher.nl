@@ -1,18 +1,15 @@
 ---
+layout: post
 title: "Using Git Submodules for the salt-vagrant-plugin"
-series: "Infra as a Repo"
-pubdate: "2013-08-03"
+category: "Infra as a Repo"
 ---
 
 In my [previous post][], I set up a simple Nginx server using [Vagrant][], [Salt Stack][] and [Digital Ocean][].
-However, there was a nagging issue with the [salt-vagrant-plugin][] -- I could not get it to install Salt correctly.
+However, there was a nagging issue with the [salt-vagrant-plugin][] – I could not get it to install Salt correctly.
 In this post, I am revisiting my Salt installation process.
 
 From my previous post:
 
->     config.vm.provision :shell,
->         :inline => 'wget -O - http://bootstrap.saltstack.org | sudo sh'
->
 > Also note that technically, the `vagrant-salt-plugin` is able to install Salt for you as well. However, for some
 > reason the plugin has decided that this requires a complete recompile of `python-zmq`, which I am not interested in.
 > So I use the official method of installing Salt before I start the plugin.
@@ -38,17 +35,20 @@ Git Submodules
 understanding submodules. Git submodules allow you to add a live link to a fixed version of a 3rd part dependency in
 another git repository.
 
+{% highlight bash %}
+
     # Create a directory for your 3rd-party dependencies
     mkdir lib
-
     # Include the dependency
     git submodule add git@github.com:saltstack/salt-bootstrap.git lib/salt-bootstrap
-
     # Pin the dependency
     cd lib/salt-bootstrap
     git checkout v1.5.5
+{% endhighlight %}
 
 And that's it. I changed my Salt provisioning block in the Vagrant file to this:
+
+{% highlight ruby %}
 
     config.vm.provision :salt do |salt|
         salt.minion_config = 'salt/standalone-minion'
@@ -56,6 +56,7 @@ And that's it. I changed my Salt provisioning block in the Vagrant file to this:
         salt.run_highstate = true
         salt.verbose = true
     end
+{% endhighlight %}
 
 and [voilà!][], I could remove the entire Shell provisioning line.
 

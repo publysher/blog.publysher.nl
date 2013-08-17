@@ -1,0 +1,25 @@
+@import-once "bootstrap/less/mixins";
+@import-once "bootstrap/less/type";
+
+/** BLOG DETAIL SPECIFIC **/
+
+article.blog.single {
+  clear: left;
+
+  header {
+    margin-bottom: 1em;
+
+    > p {
+      display: none;
+    }
+
+    time {
+      .text-muted();
+    }
+
+    a {
+      display: none;
+    }
+  }
+
+}
