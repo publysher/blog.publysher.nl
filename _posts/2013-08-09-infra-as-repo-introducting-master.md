@@ -2,11 +2,13 @@
 layout: post
 title: "Adding a Salt master"
 category: "Infra as a Repo"
+repo: https://github.com/publysher/infra-example-nginx
 ---
 
 After I [managed to provision an Nginx server][previous post] using a masterless Salt setup, I felt it was time to
 introduce a master. This proved to be a frustrating challenge, but in the end I managed to do it. This post
 describes how I did it. It might save you some time.
+
 
 The goal
 --------

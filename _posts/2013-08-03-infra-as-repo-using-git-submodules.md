@@ -2,11 +2,13 @@
 layout: post
 title: "Using Git Submodules for the salt-vagrant-plugin"
 category: "Infra as a Repo"
+repo: https://github.com/publysher/infra-example-nginx
 ---
 
 In my [previous post][], I set up a simple Nginx server using [Vagrant][], [Salt Stack][] and [Digital Ocean][].
 However, there was a nagging issue with the [salt-vagrant-plugin][] – I could not get it to install Salt correctly.
 In this post, I am revisiting my Salt installation process.
+
 
 From my previous post:
 

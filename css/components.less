@@ -4,6 +4,8 @@
 @import-once "bootstrap/less/alerts";
 @import-once "bootstrap/less/navs";
 @import-once "bootstrap/less/wells";
+@import-once "font-awesome/less/variables";
+@import-once "font-awesome/less/mixins";
 
 /** GENERAL COMPONENTS STYLING **/
 
@@ -59,17 +61,6 @@ blockquote {
 
 
 .series {
-//  counter-reset: series;
-//  ol {
-//    li {
-//      counter-increment: series;
-//
-//      a:before {
-//        content: '#' counter(series) ' – ';
-//      }
-//    }
-//  }
-
   ol {
     .list-unstyled();
 
@@ -81,7 +72,7 @@ blockquote {
         color: @pub-orange;
 
         &:before {
-          content: '\25b6 ';
+          .icon(@caret-right);
           display: inline-block;
           width: 1em;
           text-indent: 0;
@@ -102,5 +93,20 @@ blockquote {
   }
   p {
     .text-muted();
+  }
+}
+
+
+.repo {
+  h2 {
+    .h4();
+    .text-muted();
+  }
+
+  a {
+    &:before {
+      .icon(@github);
+      margin-right: .5em;
+    }
   }
 }

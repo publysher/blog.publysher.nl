@@ -6,6 +6,7 @@ title: "Improving AppEngine performance: from JPA to Objectify"
 This weekend, I have migrated my [Google AppEngine][] application [Zoo Wizard][] from JPA to [Objectify][].
 This post gives a short overview of my rationale and the steps I've taken to complete this migration.
 
+
 Spoiler: moving to Objectify is a good move, and apart from some differences between `@Embeddable` in
 JPA and Objectify, the transition went smoothly.
 

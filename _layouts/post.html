@@ -5,6 +5,7 @@ layout: default
 
     <header>
         <h1 itemprop="name">{{ page.title }}</h1>
+
         <p itemprop="about" class="series">{{ page.category }}</p>
         <time itemprop="datePublished" pubdate datetime="{{ page.date }}">{{ page.date | date_to_string }}</time>
         <a itemprop="url" rel="bookmark" href="{{ page.url }}/">permalink</a>
@@ -22,17 +23,26 @@ layout: default
 
             <ol>
                 {% for post in site.posts reversed %}
-                    {% assign match = false %}
-                    {% for category in post.categories %}
-                        {% if page.categories contains category %}
-                            {% assign match = true %}
-                        {% endif %}
-                    {% endfor %}
-                    {% if match %}
-                        <li{% if post.url == page.url %} class="active"{% endif %}><a href="{{ post.url }}">{{ post.title }}</a></li>
-                    {% endif %}
+                {% assign match = false %}
+                {% for category in post.categories %}
+                {% if page.categories contains category %}
+                {% assign match = true %}
+                {% endif %}
+                {% endfor %}
+                {% if match %}
+                <li itemscope itemtype="http://schema.org/BlogPosting" {% if post.url == page.url %} class="active"{% endif %} ><a itemprop="url" href="{{ post.url }}"><span itemprop="name">{{ post.title }}</span></a> </li>
+                {% endif %}
                 {% endfor %}
             </ol>
+        </section>
+        {% endif %}
+
+        {% if page.repo %}
+        <section class="repo" itemprop="about">
+            <h2>Get the source code</h2>
+            <p>
+                <a href="{{ page.repo }}">Fork it on GitHub</a>
+            </p>
         </section>
         {% endif %}
     </aside>

@@ -2,11 +2,13 @@
 layout: post
 title: "Separating the Master from the Minion"
 category: "Infra as a Repo"
+repo: https://github.com/publysher/infra-example-nginx
 ---
 
 Life can be good. After [my previous success in provisioning a master/minion set-up][my-master], the next logical step was
 to introduce a separate master VM. This post explains how I did it. It will be a relatively short post, because it
 turned out to be ridiculously easy.
+
 
 The goal
 --------

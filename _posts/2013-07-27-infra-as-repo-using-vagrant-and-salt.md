@@ -2,12 +2,14 @@
 layout: post
 title: "Using Vagrant and Salt Stack to deploy Nginx on DigitalOcean"
 category: "Infra as a Repo"
+repo: https://github.com/publysher/infra-example-nginx
 ---
 
 I believe that managing your infrastructure can and should be fun. Recently I have been toying around with
 [Vagrant](http://vagrantup.com) and [Salt Stack](http://saltstack.com/) to make this a reality. This weekend, 
 I managed to combine these tools to automatically provision a new Nginx server on 
 [Digital Ocean](https://www.digitalocean.com/?refcode=8d8ff680bec5).
+
 
 This in itself is nothing new - the interesting part is where I have published the entire script as a Github 
 repository without sacrificing any security.

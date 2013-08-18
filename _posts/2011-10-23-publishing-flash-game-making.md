@@ -7,6 +7,7 @@ category: "Game Development"
 Making games is fun. But so is making money. My first game, Droppy Goes Home, is nearly finished, and it's time to
 prepare the next steps: publishing the game and becoming annoyingly rich in the process.
 
+
 I've never published a game before, but in the end, business is always the same. In order to make money, every business
 has to do two important things:
 
@@ -16,7 +17,7 @@ has to do two important things:
 So let's apply this to the Flash game business!
 
 Research
-––--
+--------
 
 Inventing the wheel might be exciting, but I prefer to use available knowledge. An hour of Googling resulted in the
 following noteworthy articles.
@@ -32,7 +33,7 @@ following noteworthy articles.
 Regarding Droppy Goes Home, all these articles are pointing in the same direction: Game portals and Sponsorship.
 
 Game Portals
-––––
+------------
 
 [Game portals] are sites dedicated to Flash Games. They have a huge audience, and combined with "Editor's Picks"
 and "Top Games" lists they can provide enormous amounts of players; this basically shifts your marketing effort from
@@ -50,7 +51,7 @@ Sponsorship
 Most research points to  [FlashGameLicense] as the best place to find a sponsor.
 
 Other methods
-––––-
+-------------
 
 The research above points to other methods as well, but they seem unsuitable for Droppy Goes Home.
 In-game advertising does not seem to be a goldmine, especially compared to game portals like
@@ -60,7 +61,7 @@ Other options like micro-transactions (where players pay for additional content 
 changes to the current version of the game. But who knows, one of the sequels might actually use such a method.
 
 Conclusion
-–––-
+----------
 
 Doing the research has been very interesting, and has given me a clear path to follow for Droppy Goes Home.
 

@@ -1,13 +1,33 @@
 ---
 layout: default
-title: Your New Jekyll Site
+title: Publysher Development Blog
 ---
 
-<div id="home">
-  <h1>Blog Posts</h1>
-  <ul class="posts">
+<ul class="blog-posts">
     {% for post in site.posts %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+    <li>
+        <article class="blog summary" itemscope itemtype="http://schema.org/BlogPosting">
+            <header>
+                <h1 itemprop="name">{{ post.title }}</h1>
+                <p itemprop="about" class="series">{{ post.category }}</p>
+                <time itemprop="datePublished" pubdate datetime="{{ post.date }}">{{ post.date | date_to_string }}</time>
+                <a itemprop="url" rel="bookmark" href="{{ post.url }}/">permalink</a>
+            </header>
+
+            <div class="summary">
+                {{ post.excerpt }}
+            </div>
+
+            <footer>
+                <ul class="links">
+                    <li>
+                        <a rel="bookmark" itemprop="url" href="{{ post.url }}">Read more</a>
+                    </li>
+                </ul>
+            </footer>
+        </article>
+
+    </li>
     {% endfor %}
-  </ul>
-</div>
+
+</ul>
