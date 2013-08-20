@@ -2,6 +2,8 @@
 
 article.blog.summary {
 
+  cursor: pointer;
+
   position: relative;
   header {
 
@@ -18,14 +20,23 @@ article.blog.summary {
       margin: -1em;
     }
 
-    time,
+    time {
+      .text-muted();
+      float: left;
+      margin-right: .25em;
+
+      &:after {
+        content: ' – ';
+      }
+    }
+
     .series {
       display: none;
     }
   }
 
   h1 {
-    margin-top: 0;
+    .h3();
   }
 
   footer {
@@ -40,5 +51,15 @@ article.blog.summary {
     }
   }
 
+}
+
+article.blog.summary {
+  border-top: 1px solid @pub-light;
+  margin-top: 1.5em;
+
+  &:first-of-type {
+    border-top: none;
+    margin-top: 0;
+  }
 }
 

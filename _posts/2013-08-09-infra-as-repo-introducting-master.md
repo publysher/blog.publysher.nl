@@ -3,6 +3,15 @@ layout: post
 title: "Adding a Salt master"
 category: "Infra as a Repo"
 repo: https://github.com/publysher/infra-example-nginx
+tags:
+  - devops
+  - digital ocean
+  - infra as a repo
+  - infrastructure
+  - salt stack
+  - vagrant
+  - virtual machine
+  - vps
 ---
 
 After I [managed to provision an Nginx server][previous post] using a masterless Salt setup, I felt it was time to

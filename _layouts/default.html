@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>{{ page.title }} – Publysher Development Blog</title>
     <meta name="viewport" content="width=device-width">
+    {% if page.tags %}
+    <meta name="keywords" content="{{ page.tags | join:','}}">
+    {% endif %}
 
     <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:500' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:700' rel='stylesheet' type='text/css'>

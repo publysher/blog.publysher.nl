@@ -17,6 +17,20 @@ layout: default
 
     <aside>
 
+        {% if page.tags contains 'flash' %}
+        <section class="ads">
+            <script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- GameDev banners -->
+            <ins class="adsbygoogle"
+                 style="display:inline-block;width:336px;height:280px"
+                 data-ad-client="ca-pub-4602907571543068"
+                 data-ad-slot="8101043828"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </section>
+        {% endif %}
+
         {% if page.category %}
         <section class="series">
             <h2>{{ page.category }}</h2>
@@ -42,6 +56,18 @@ layout: default
             <h2>Get the source code</h2>
             <p>
                 <a href="{{ page.repo }}">Fork it on GitHub</a>
+            </p>
+        </section>
+        {% endif %}
+
+        {% if page.tags contains 'digital ocean' %}
+        <section class="sponsor-me">
+            <h2>Sponsor this blog</h2>
+            <p>
+                Try it out for yourself and
+                <a href="https://www.digitalocean.com/?refcode=8d8ff680bec5">
+                    create an account on Digital Ocean
+                </a>.
             </p>
         </section>
         {% endif %}

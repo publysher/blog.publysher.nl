@@ -1,6 +1,12 @@
 ---
 layout: post
 title: "Improving AppEngine performance: from JPA to Objectify"
+tags:
+  - appengine
+  - gae
+  - java
+  - jpa
+  - objectify
 ---
 
 This weekend, I have migrated my [Google AppEngine][] application [Zoo Wizard][] from JPA to [Objectify][].

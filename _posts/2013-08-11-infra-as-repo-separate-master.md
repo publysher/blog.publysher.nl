@@ -3,6 +3,15 @@ layout: post
 title: "Separating the Master from the Minion"
 category: "Infra as a Repo"
 repo: https://github.com/publysher/infra-example-nginx
+tags:
+  - devops
+  - digital ocean
+  - infra as a repo
+  - infrastructure
+  - salt stack
+  - vagrant
+  - virtual machine
+  - vps
 ---
 
 Life can be good. After [my previous success in provisioning a master/minion set-up][my-master], the next logical step was

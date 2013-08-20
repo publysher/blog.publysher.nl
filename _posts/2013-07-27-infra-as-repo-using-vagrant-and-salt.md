@@ -3,6 +3,15 @@ layout: post
 title: "Using Vagrant and Salt Stack to deploy Nginx on DigitalOcean"
 category: "Infra as a Repo"
 repo: https://github.com/publysher/infra-example-nginx
+tags:
+  - devops
+  - digital ocean
+  - infra as a repo
+  - infrastructure
+  - salt stack
+  - vagrant
+  - virtual machine
+  - vps
 ---
 
 I believe that managing your infrastructure can and should be fun. Recently I have been toying around with

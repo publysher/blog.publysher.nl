@@ -3,6 +3,15 @@ layout: post
 title: "Using Git Submodules for the salt-vagrant-plugin"
 category: "Infra as a Repo"
 repo: https://github.com/publysher/infra-example-nginx
+tags:
+  - devops
+  - digital ocean
+  - infra as a repo
+  - infrastructure
+  - salt stack
+  - vagrant
+  - virtual machine
+  - vps
 ---
 
 In my [previous post][], I set up a simple Nginx server using [Vagrant][], [Salt Stack][] and [Digital Ocean][].
