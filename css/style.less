@@ -32,3 +32,36 @@
 @import-once "bootstrap/less/responsive-utilities.less";
 
 
+body > footer {
+  text-align: center;
+
+  .links {
+    .list-unstyled();
+
+    a:before {
+      margin-right: .5em;
+    }
+    a.website:before {
+      .icon(@globe);
+    }
+    a[type='application/rss+xml']:before {
+      .icon(@rss-sign);
+    }
+  }
+}
+
+.archive {
+  .list-unstyled();
+
+  li {
+    .make-row();
+  }
+
+  time {
+    .make-md-column(2);
+  }
+  a {
+    .make-md-column(10);
+  }
+
+}

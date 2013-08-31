@@ -12,6 +12,7 @@ tags:
   - vagrant
   - virtual machine
   - vps
+description: "Provisioning a salt master on Digital Ocean"
 ---
 
 After I [managed to provision an Nginx server][previous post] using a masterless Salt setup, I felt it was time to
@@ -156,7 +157,7 @@ salt minion is up, running and connected when we finally do what we've always wa
 
 Time for a `vagrant up`.
 
-<div class="mission-accomplished"></div>
+Mission Accomplished!
 
 Well, almost...
 
@@ -221,7 +222,7 @@ in learning Ruby...
 
 If anyone has a better solution, please let me know! But despite my misgivings about this hack, [it works].
 
-<div class="mission-accomplished">For real now</div>
+Mission Accomplished! (for real now)
 
 _Don't forget: my infra is a [repo], so go ahead and fork it_
 

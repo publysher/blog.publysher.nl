@@ -12,6 +12,7 @@ tags:
   - vagrant
   - virtual machine
   - vps
+description: "Securing your servers with Salt"
 ---
 
 Provisioning servers on [DigitalOcean][] like a king is one thing, but let's be honest: [default installations don't provide

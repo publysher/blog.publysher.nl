@@ -12,6 +12,7 @@ tags:
   - vagrant
   - virtual machine
   - vps
+description: "Provisioning an Nginx server on DigitalOcean using Vagrant and SaltStack"
 ---
 
 I believe that managing your infrastructure can and should be fun. Recently I have been toying around with
@@ -149,7 +150,7 @@ The proof is in the pudding (apparently), so with great trepidation I did a `vag
 You should try it yourself – this was really quite exciting. Just a few minutes later, I could access my professionally
 provisioned Nginx VPS on [http://192.241.146.220](http://192.241.146.220). Without me ever SSH-ing to the server itself.
 
-<div class="mission-accomplished"></div>
+Mission Accomplished!
 
 Or was it?
 

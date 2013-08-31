@@ -12,6 +12,7 @@ tags:
   - vagrant
   - virtual machine
   - vps
+description: "Using git submodules to reuse other people's code"
 ---
 
 In my [previous post][], I set up a simple Nginx server using [Vagrant][], [Salt Stack][] and [Digital Ocean][].
@@ -71,7 +72,7 @@ And that's it. I changed my Salt provisioning block in the Vagrant file to this:
 
 and [voilà!][], I could remove the entire Shell provisioning line.
 
-<div class="mission-accomplished"></div>
+Mission Accomplished!
 
 So what?
 --------

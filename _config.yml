@@ -3,3 +3,4 @@ markdown: redcarpet
 pygments: true
 
 permalink: /:year/:month/:title.html
+url: http://blog.publysher.nl

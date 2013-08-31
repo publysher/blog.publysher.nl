@@ -1,10 +1,10 @@
 ---
 layout: post
 title: "Publishing a Flash Game: Making Preparations"
-category: "Game Development"
 tags:
   - flash
   - monetizing
+description: "Quick reference for monetizing a flash game"
 ---
 
 Making games is fun. But so is making money. My first game, Droppy Goes Home, is nearly finished, and it's time to

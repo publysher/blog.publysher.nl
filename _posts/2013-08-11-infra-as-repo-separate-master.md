@@ -12,6 +12,7 @@ tags:
   - vagrant
   - virtual machine
   - vps
+description: "Provisioning a separate Salt master on Digital Ocean"
 ---
 
 Life can be good. After [my previous success in provisioning a master/minion set-up][my-master], the next logical step was
@@ -129,7 +130,7 @@ I told you it was easy:
 
 And that's it. Calling `vagrant up` now spins up two VMs: one salt master and one minion that runs as an Nginx server.
 
-<div class="mission-accomplished"></div>
+Mission Accomplished!
 
 
 Deploying to Digital Ocean

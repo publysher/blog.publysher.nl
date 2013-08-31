@@ -27,7 +27,7 @@ blockquote {
     .previous();
 
     a:before {
-      content: '\27f5';
+      .icon(@long-arrow-left);
       margin-right: .5em;
     }
   }
@@ -36,7 +36,7 @@ blockquote {
     .next();
 
     a:after {
-      content: '\27f6';
+      .icon(@long-arrow-right);
       margin-left: .5em;
     }
   }
@@ -100,4 +100,17 @@ blockquote {
 
 .ads {
   text-align: center;
+}
+
+img {
+  .img-responsive();
+
+  display: block;
+  margin: 1em auto;
+
+  padding: 4px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0,0,0,.2);
+  .box-shadow(0 1px 3px rgba(0,0,0,.1));
 }

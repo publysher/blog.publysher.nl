@@ -1,0 +1,13 @@
+---
+layout: default
+title: Publysher Development Blog
+---
+
+<ul class="archive">
+    {% for post in site.posts %}
+    <li itemscope itemtype="http://schema.org/BlogPosting">
+        <time itemprop="datePublished" pubdate datetime="{{ post.date }}">{{ post.date | date_to_string }}</time>
+        <a itemprop="url" rel="bookmark" href="{{ post.url }}"><span itemprop="name">{{ post.title }}</span></a>
+    </li>
+    {% endfor %}
+</ul>

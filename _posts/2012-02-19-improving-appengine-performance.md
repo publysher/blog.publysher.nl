@@ -7,6 +7,7 @@ tags:
   - java
   - jpa
   - objectify
+description: "How I migrated from JPA to Objectify to improve GAE performance"
 ---
 
 This weekend, I have migrated my [Google AppEngine][] application [Zoo Wizard][] from JPA to [Objectify][].

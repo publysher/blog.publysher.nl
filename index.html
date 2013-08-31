@@ -1,10 +1,11 @@
 ---
 layout: default
 title: Publysher Development Blog
+canonical: /
 ---
 
 <ul class="blog-posts">
-    {% for post in site.posts %}
+    {% for post in site.posts|limit:10 %}
     <li>
         <article class="blog summary" itemscope itemtype="http://schema.org/BlogPosting">
             <header>
@@ -15,7 +16,7 @@ title: Publysher Development Blog
             </header>
 
             <div class="summary">
-                {{ post.excerpt }}
+                {{ post.excerpt | strip_html }}
             </div>
 
             <footer>
@@ -29,5 +30,6 @@ title: Publysher Development Blog
 
     </li>
     {% endfor %}
-
 </ul>
+
+<a rel="archives" href="archive.html">Full archive</a>
