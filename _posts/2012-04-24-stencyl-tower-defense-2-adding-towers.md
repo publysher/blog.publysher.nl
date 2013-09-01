@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Stencyl Tower Defense: Adding Towers"
-category: "Stencyl Tutorial"
+title: "Adding Towers"
+category: "Stencyl Tower Defense Tutorial"
 tags:
   - stencyl
   - stencylworks

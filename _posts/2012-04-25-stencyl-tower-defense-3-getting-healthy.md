@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Stencyl Tower Defense: Getting Healthy"
-category: "Stencyl Tutorial"
+title: "Getting Healthy"
+category: "Stencyl Tower Defense Tutorial"
 tags:
   - stencyl
   - stencylworks

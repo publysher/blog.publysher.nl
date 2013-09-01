@@ -41,6 +41,11 @@ body > footer {
     a:before {
       margin-right: .5em;
     }
+
+    a[rel=archives]:before {
+      .icon(@archive);
+    }
+
     a.website:before {
       .icon(@globe);
     }
@@ -59,6 +64,7 @@ body > footer {
 
   time {
     .make-md-column(2);
+    text-align: right;
   }
   a {
     .make-md-column(10);

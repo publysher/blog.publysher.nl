@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Stencyl Tower Defense: The Humble Beginnings"
-category: "Stencyl Tutorial"
+title: "The Humble Beginnings"
+category: "Stencyl Tower Defense Tutorial"
 tags:
   - stencyl
   - stencylworks
