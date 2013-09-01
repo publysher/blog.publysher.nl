@@ -44,16 +44,27 @@ layout: default
                 {% endif %}
                 {% endfor %}
                 {% if match %}
-                <li itemscope itemtype="http://schema.org/BlogPosting" {% if post.url == page.url %} class="active"{% endif %} ><a itemprop="url" href="{{ post.url }}"><span itemprop="name">{{ post.title }}</span></a> </li>
+                <li itemscope itemtype="http://schema.org/BlogPosting"
+                {% if post.url == page.url %} class="active"{% endif %} ><a itemprop="url" href="{{ post.url }}"><span
+                    itemprop="name">{{ post.title }}</span></a> </li>
                 {% endif %}
                 {% endfor %}
             </ol>
         </section>
         {% endif %}
 
+        {% if page.tags contains 'stencyl' %}
+        <section class="sponsor-me">
+            <h2>Buy the Book</h2>
+            <a href="http://www.amazon.com/gp/product/1849695962/ref=as_li_qf_sp_asin_il?ie=UTF8&camp=1789&creative=9325&creativeASIN=1849695962&linkCode=as2&tag=dnd05-20"><img border="0" style="margin: 0" src="http://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=1849695962&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=dnd05-20" ></a><img src="http://ir-na.amazon-adsystem.com/e/ir?t=dnd05-20&l=as2&o=1&a=1849695962" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+            <a href="http://www.amazon.com/gp/product/1849695962/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1849695962&linkCode=as2&tag=dnd05-20">Learning Stencyl 3.x Game Development: Beginner's Guide</a><img src="http://ir-na.amazon-adsystem.com/e/ir?t=dnd05-20&l=as2&o=1&a=1849695962" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+        </section>
+        {% endif %}
+
         {% if page.repo %}
         <section class="repo" itemprop="about">
             <h2>Get the source code</h2>
+
             <p>
                 <a href="{{ page.repo }}">Fork it on GitHub</a>
             </p>
@@ -63,6 +74,7 @@ layout: default
         {% if page.tags contains 'digital ocean' %}
         <section class="sponsor-me">
             <h2>Sponsor this blog</h2>
+
             <p>
                 Try it out for yourself and
                 <a href="https://www.digitalocean.com/?refcode=8d8ff680bec5" rel="nofollow">
@@ -87,5 +99,22 @@ layout: default
             {% endif %}
         </ul>
     </footer>
+
+    <div itemprop="comment">
+        <h2>Comments</h2>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            var disqus_shortname = 'publysher-blog'; // required: replace example with your forum shortname
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
 </article>
 

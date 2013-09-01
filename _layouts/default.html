@@ -42,7 +42,8 @@
     <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:700' rel='stylesheet' type='text/css'>
-    <link rel='alternate' type='application/rss+xml' title='Publysher Development Blog' href='http://feeds.feedburner.com/PublysherDevelopmentBlog'>
+    <link rel='alternate' type='application/rss+xml' title='Publysher Development Blog'
+          href='http://feeds.feedburner.com/PublysherDevelopmentBlog'>
 
     {% if page.next.url %}
     <link rel="next prefetch prerender" href="{{ page.next.url }}">
@@ -52,7 +53,7 @@
     {% endif %}
 
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="shortcut icon" href="/favicon.ico"/>
 </head>
 <body>
 
@@ -70,7 +71,8 @@
                 <a href="http://www.publysher.nl/">Website</a>
             </li>
             <li>
-                <a rel="alternate" type="application/rss+xml" href="http://feeds.feedburner.com/PublysherDevelopmentBlog">RSS</a>
+                <a rel="alternate" type="application/rss+xml"
+                   href="http://feeds.feedburner.com/PublysherDevelopmentBlog">RSS</a>
             </li>
         </ul>
 
@@ -98,22 +100,15 @@
     </ul>
 </footer>
 
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 <script type="text/javascript">
-    (function() {
-        var images = document.getElementsByTagName("img");
-
-        var createOnClick = function(img) {
-            return function() {
-                document.location = img.src;
-            }
-        };
-
-        for (var i = 0; i < images.length; i++) {
-            var img = images[i];
-            img.setAttribute("style", "cursor:pointer;");
-            img.onclick = createOnClick(img);
-        }
-    })();
+    $(function () {
+        $(".blog .content img")
+                .css({cursor: 'pointer'})
+                .on('click', function () {
+                    document.location = $(this).attr("src");
+                });
+    });
 </script>
 <script type="text/javascript">
 
@@ -122,10 +117,13 @@
     _gaq.push(['_setDomainName', 'publysher.nl']);
     _gaq.push(['_trackPageview']);
 
-    (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
     })();
 </script>
 </body>
