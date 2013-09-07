@@ -12,7 +12,7 @@ canonical: /
                 <h1 itemprop="name">{{ post.title }}</h1>
                 <p itemprop="about" class="series">{{ post.category }}</p>
                 <time itemprop="datePublished" pubdate datetime="{{ post.date }}">{{ post.date | date_to_string }}</time>
-                <a itemprop="url" rel="bookmark" href="{{ post.url }}/">permalink</a>
+                <a itemprop="url" rel="bookmark" href="{{ post.url }}">permalink</a>
             </header>
 
             <div class="summary">
