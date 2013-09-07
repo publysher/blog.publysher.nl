@@ -1,7 +1,12 @@
-DEST=_site
+DEST?=_site
 
 .PHONY:	all
 all:	site css
+
+.PHONY:	clean
+clean:
+	rm -rf $(DEST)
+
 
 .PHONY:	css
 css:	
