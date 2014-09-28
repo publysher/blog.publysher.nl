@@ -1,6 +1,0 @@
-[submodule "less/bootstrap"]
-	path = less/bootstrap
-	url = https://github.com/twbs/bootstrap
-[submodule "less/font-awesome"]
-	path = less/font-awesome
-	url = https://github.com/FortAwesome/Font-Awesome

@@ -1,0 +1,19 @@
+/*
+ * Additional CSS for Hyde-X
+ */
+
+.posts {
+  list-style: none;
+}
+
+.sidebar-about h1 {
+  font-size: 2.75rem;
+}
+
+pre, code {
+  font-size: 70%;
+}
+
+img {
+  margin: 0 auto;
+}

@@ -1,6 +1,0 @@
-User-agent: *
-
-Disallow: /css/bootstrap/
-Disallow: /css/font-awesome/
-
-Sitemap: http://blog.publysher.nl/sitemap.xml
