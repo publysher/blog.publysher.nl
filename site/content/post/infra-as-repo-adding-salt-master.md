@@ -13,8 +13,6 @@ tags:
   - virtual machine
   - vps
 description: "How to provision a salt master on Digital Ocean."
-aliases:
-  - /2013/08/infra-as-repo-adding-salt-master.html
 ---
 
 After I [managed to provision an Nginx server][previous post] using a masterless Salt setup, I felt it was time to

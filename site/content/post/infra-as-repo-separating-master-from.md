@@ -13,8 +13,6 @@ tags:
   - virtual machine
   - vps
 description: "How to provision a separate Salt master on Digital Ocean."
-aliases:
-  - /2013/08/infra-as-repo-separating-master-from.html
 ---
 
 Life can be good. After [my previous success in provisioning a master/minion set-up][my-master], the next logical step was

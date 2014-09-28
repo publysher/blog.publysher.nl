@@ -13,8 +13,6 @@ tags:
   - virtual machine
   - vps
 description: "Using git submodules to reuse other people's code"
-aliases:
-  - /2013/08/infra-as-repo-using-git-submodules-for.html
 ---
 
 In my [previous post][], I set up a simple Nginx server using [Vagrant][], [Salt Stack][] and [Digital Ocean][].

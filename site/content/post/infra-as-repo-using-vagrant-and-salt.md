@@ -13,8 +13,6 @@ tags:
   - virtual machine
   - vps
 description: "Provisioning an Nginx server on DigitalOcean using Vagrant and SaltStack"
-aliases:
-  - /2013/07/infra-as-repo-using-vagrant-and-salt.html
 ---
 
 I believe that managing your infrastructure can and should be fun. Recently I have been toying around with

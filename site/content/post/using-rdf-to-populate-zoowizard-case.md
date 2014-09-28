@@ -3,8 +3,6 @@ date: "2012-08-19"
 title: "Using RDF to populate ZooWizard, a case study"
 tags: ["zoo wizard", "linked data", "semantic web", "rdf", "python"]
 description: "Extracting RDF data from a website that does not support RDF"
-aliases:
-  - /2012/08/using-rdf-to-populate-zoowizard-case.html
 ---
 
 For some time, I've been keeping a small website called [ZooWizard](http://www.zoowizard.eu/). It's main purpose: to

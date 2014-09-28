@@ -13,8 +13,6 @@ tags:
   - virtual machine
   - vps
 description: "How to secure your servers with Salt."
-aliases:
-  - /2013/08/infra-as-repo-securing-your.html
 ---
 
 Provisioning servers on [DigitalOcean][] like a king is one thing, but let's be honest: [default installations don't provide

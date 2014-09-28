@@ -10,8 +10,6 @@ tags:
   - game development
   - tower defense
 description: "Stencyl Tutorial #4 for creating tower defense games"
-aliases:
-  - /2012/05/stencyl-tower-defense-4-shooting.html
 ---
 
 So far my towers have been shooting at enemies with invisible death rays. This is of course state-of-the-art

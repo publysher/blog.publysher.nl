@@ -3,8 +3,6 @@ title: "Publishing a Flash Game: Making Preparations"
 tags: ["flash", "monetizing"]
 description: "Quick reference for monetizing a flash game"
 date: "2011-10-23"
-aliases:
-  - /2011/10/publishing-flash-game-making.html
 ---
 
 Making games is fun. But so is making money. My first game, Droppy Goes Home, is nearly finished, and it's time to

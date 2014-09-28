@@ -10,8 +10,6 @@ tags:
   - game development
   - tower defense
 description: "Stencyl Tutorial #8 for creating tower defense games"
-aliases:
-  - /2012/05/stencyl-tower-defense-8-satisfaction.html
 ---
 
 In the previous post I allowed the player to place his own towers to shoot the enemies. This was a great step

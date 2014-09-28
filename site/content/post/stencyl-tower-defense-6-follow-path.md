@@ -10,8 +10,6 @@ tags:
   - game development
   - tower defense
 description: "Stencyl Tutorial #6 for creating tower defense games"
-aliases:
-  - /2012/05/stencyl-tower-defense-6-follow-path.html
 ---
 
 Today it's time to change our enemies from harmless wandering puppets into goal-oriented path-following critters. I

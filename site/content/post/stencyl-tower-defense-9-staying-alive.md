@@ -10,8 +10,6 @@ tags:
   - game development
   - tower defense
 description: "Stencyl Tutorial #9 for creating tower defense games"
-aliases:
-  - /2012/06/stencyl-tower-defense-9-staying-alive.html
 ---
 
 Our Tower Defense game is slowly turning into a real game, but there is still a lot of work to do. For example,
